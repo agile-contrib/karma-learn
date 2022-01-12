@@ -3,36 +3,43 @@ let webpackConfig = require('./webpack.config.js')
 module.exports = function(config) {
     config.set({
 
-        // base path that will be used to resolve all patterns (eg. files, exclude)
+        /***
+         * 基础路径，用在files，exclude属性上
+         */
         basePath: '',
 
-
-        // frameworks to use
-        // available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
+        /**
+         * 测试框架
+         * 可用的框架：https://npmjs.org/browse/keyword/karma-adapter
+         */
         frameworks: ['jasmine'],
 
-
-        // list of files / patterns to load in the browser
+        /**
+         * 需要加载到浏览器的文件列表
+         */
         files: [
             'test/**/*.spec.js'
         ],
 
-
-        // list of files / patterns to exclude
+        /**
+         * 排除的文件列表
+         */
         exclude: [],
 
-
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
+        /**
+         * 在浏览器使用之前处理匹配的文件
+         * 可用的预处理: https://npmjs.org/browse/keyword/karma-preprocessor
+         */
         preprocessors: {
             // 为选定脚本指定前处理器，这里配置所有的测试脚本需要经过webpack处理
             'test/**/*.spec.js': ['webpack']
         },
 
-
-        // test results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
+        /**
+         * 使用测试结果报告者
+         * 可能的值: "dots", "progress"
+         * 可用的报告者：https://npmjs.org/browse/keyword/karma-reporter
+         */
         reporters: ['progress'],
 
 
@@ -44,26 +51,36 @@ module.exports = function(config) {
         colors: true,
 
 
-        // level of logging
-        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        /**
+         * 日志等级
+         * 可能的值：
+         * config.LOG_DISABLE //不输出信息
+         * config.LOG_ERROR    //只输出错误信息
+         * config.LOG_WARN //只输出警告信息
+         * config.LOG_INFO //输出全部信息
+         * config.LOG_DEBUG //输出调试信息
+         */
         logLevel: config.LOG_INFO,
 
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
 
-
-        // start these browsers
-        // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
+        /**
+         * 测试启动的浏览器
+         * 可用的浏览器：https://npmjs.org/browse/keyword/karma-launcher
+         */
         browsers: ['Chrome'],
 
-
-        // Continuous Integration mode
-        // if true, Karma captures browsers, runs the tests and exits
+        /**
+         * 开启或禁用持续集成模式
+         * 设置为true, Karma将打开浏览器，执行测试并最后退出
+         */
         singleRun: false,
 
-        // Concurrency level
-        // how many browser instances should be started simultaneously
+        /**
+         * 并发级别（启动的浏览器数）
+         */
         concurrency: Infinity,
 
         // Webpack配置
