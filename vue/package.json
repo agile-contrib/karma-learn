@@ -1,0 +1,31 @@
+{
+    "name": "karma-test",
+    "version": "1.0.0",
+    "description": "基于karma搭建的测试环境",
+    "main": "index.js",
+    "scripts": {
+        "test": "karma start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://172.16.60.132/vx-git/vx-dataview/karma"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "karma": "^6.3.10",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-jasmine": "^4.0.1",
+        "karma-webpack": "^5.0.0",
+        "webpack": "^4.46.0",
+        "css-loader": "^2.1.1",
+        "vue-loader": "^15.7.2",
+        "vue-style-loader": "^4.1.2",
+        "vue-template-compiler": "^2.6.10",
+        "babel-loader": "^8.1.0"
+    },
+    "dependencies": {
+        "@hai2007/browser": "^0.3.4",
+        "vue": "^2.6.14"
+    }
+}
